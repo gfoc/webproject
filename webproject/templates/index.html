@@ -12,6 +12,22 @@
         </style>
     </head>
         <body>
-            <div class="main">{{about}} {{clist}}</div>
+            {% for n in courselist %}
+            <div> {{ forloop.first}}{{n}}</div> <! forloo.counter-- -->
+            {% endfor %}
+
+            <br\>
+            <table> border="1" cellpadding="10">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    {% for d in students_details %}
+                </tr>
+                    <td>{{d.name}}</td>
+                    <td>{{d.phone}}</td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
         </body>
 </html>

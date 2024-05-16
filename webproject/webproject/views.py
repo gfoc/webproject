@@ -1,18 +1,24 @@
 from django.http import HttpResponse
+from django.shortcuts import render  #html page ko render karwane ka kaam karega 
+
+
 
 def aboutus(request):
     return HttpResponse("<b>Welcome to webproject<b/>")
 
 def homepage(request):
-    data ={
-        'title':'Home Page",
-        'about':'This is professional website made for doing specifications and excellaration in different fields',
-        'clist':['PHP','JAVA','PYTHON'],
-    }
-
-    return render(request,"index.html",data)
     
-    return HttpResponse("Welcome to the Homepage")
+    data = {
+        'title':'Home..Page',
+        'about':'Hello this is a professional website',
+        'courselist':['PHP','JAVA','PYTHON'],
+        'students_details':[
+            {'name':'pradeep','phone':9374838282},
+            {'name':'testing','phone':4783384848}
+        ]
+
+    }
+    return render(request,"index.html",data) 
 
 
 def Course(request):
@@ -21,3 +27,4 @@ def Course(request):
 
 def coursedetails(request,courseid):
     return HttpResponse(courseid)
+
